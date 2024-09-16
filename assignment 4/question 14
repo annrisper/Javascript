@@ -1,0 +1,16 @@
+function getAllValues(obj) {
+  const values = [];
+  for (let prop in obj) {
+    values.push(obj[prop]);
+  }
+  return values;
+}
+
+// Example usage:
+const myObject = {
+  property1: 'value1',
+  property2: 'value2'
+};
+
+const allValues = getAllValues(myObject);
+console.log(allValues);

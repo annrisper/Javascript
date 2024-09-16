@@ -1,0 +1,11 @@
+function all_properties(obj) {
+  let properties = [];
+  for (let prop in obj) {
+    if (typeof obj[prop] === 'function') {
+      properties.push(prop);
+    }
+  }
+  return properties;
+}
+
+console.log(all_properties(Array));

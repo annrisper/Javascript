@@ -1,0 +1,12 @@
+function hasProperty(obj, property) {
+  return Object.prototype.hasOwnProperty.call(obj, property);
+}
+
+// Example usage:
+const myObject = {
+  property1: 'value1',
+  property2: 'value2'
+};
+
+console.log(hasProperty(myObject, 'property1')); // Output: true
+console.log(hasProperty(myObject, 'property3')); // Output: false

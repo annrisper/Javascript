@@ -1,0 +1,29 @@
+function parseURL(url) {
+  const urlRegex = /^(?:(https?):\/\/)?((?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9])(?::(\d+))?((?:\/[^?#]*?)?(?:\?[^#]*?)?(?:#.*?)?)$/;
+  const match = urlRegex.exec(url);
+
+  if (!match) {
+    return null;
+  }
+
+  const protocol = match[1] || 'http';
+  const hostname = match[2];
+  const port = match[3] || null;
+  const pathname = match[4] || '/';
+  const search = match[5] || null;
+  const hash = match[6] || null;
+
+  return {
+    protocol,
+    hostname,
+    port,
+    pathname,
+    search,
+    hash
+  };
+}
+
+// Example usage:
+const url = 'https://www.example.com:8080/path/to/file.html?query=value#fragment';
+const parsedUrl = parseURL(url);
+console.log(parsedUrl);

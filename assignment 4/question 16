@@ -1,0 +1,16 @@
+function keyValueSwap(obj) {
+  const swappedObj = {};
+  for (let key in obj) {
+    swappedObj[obj[key]] = key;
+  }
+  return swappedObj;
+}
+
+// Example usage:
+const myObject = {
+  property1: 'value1',
+  property2: 'value2'
+};
+
+const swappedObject = keyValueSwap(myObject);
+console.log(swappedObject);

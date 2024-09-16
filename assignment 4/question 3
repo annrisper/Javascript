@@ -1,0 +1,10 @@
+var student = {
+    name : "David Rayy",
+    sclass : "VI",
+    rollno : 12
+};
+
+// Get the number of properties in the object
+var objectLength = Object.keys(student).length;
+
+console.log("Object length:", objectLength);

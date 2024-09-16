@@ -1,0 +1,26 @@
+function getAllProperties(obj) {
+  const properties = [];
+  let currentObj = obj;
+
+  while (currentObj) {
+    for (let prop in currentObj) {
+      if (!properties.includes(prop)) {
+        properties.push(prop);
+      }
+    }
+    currentObj = Object.getPrototypeOf(currentObj);
+  }
+
+  return properties;
+}
+
+// Example usage:
+const myObject = {
+  ownProperty1: 'value1',
+  ownProperty2: 'value2'
+};
+
+myObject.__proto__.inheritedProperty = 'inheritedValue';
+
+const allProps = getAllProperties(myObject);
+console.log(allProps);
